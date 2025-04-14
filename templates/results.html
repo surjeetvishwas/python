@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Optimization Results</title>
+     <style>
+        body { font-family: sans-serif; margin: 20px; }
+        h1, h2 { color: #333; }
+        table { border-collapse: collapse; width: 50%; margin-top: 15px; margin-bottom: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .results-summary p { margin: 5px 0; }
+        img { max-width: 100%; height: auto; margin-top: 20px; border: 1px solid #ccc;}
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Optimization Results</h1>
+
+    <div class="results-summary">
+        <h2>Parameters Used:</h2>
+        <p><strong>Tickers:</strong> {{ tickers }}</p>
+        <p><strong>Investment Amount:</strong> {{ "%.2f"|format(monto) }} {{ moneda }}</p>
+        <p><strong>Reference Index:</strong> {{ indice }}</p>
+        <p><strong>Optimization Objective:</strong> {{ objetivo }}</p>
+    </div>
+
+    <h2>Optimal Portfolio Weights:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Asset</th>
+                <th>Weight (%)</th>
+                <th>Investment ({{ moneda }})</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in weights %}
+            <tr>
+                <td>{{ item.Activo }}</td>
+                <td>{{ "%.2f"|format(item.Peso * 100) }}%</td>
+                <td>{{ "%.2f"|format(item.Inversión) }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Downloads & Visualization:</h2>
+    <p><a href="{{ url_for('serve_static', filename=report_file) }}" target="_blank">Download PDF Report</a></p>
+
+    <h2>Portfolio Growth Simulation:</h2>
+    {% if plot_file %}
+    <img src="{{ url_for('serve_static', filename=plot_file) }}" alt="Portfolio Growth Plot">
+    {% else %}
+    <p>Could not generate growth plot.</p>
+    {% endif %}
+
+    <br><br>
+    <a href="/">Run another optimization</a>
+
+</body>
+</html>

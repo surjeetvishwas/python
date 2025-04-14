@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio Optimizer Input</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        label { display: block; margin-top: 10px; }
+        input[type=text], input[type=number], select {
+            width: 300px;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box; /* Needed to prevent width issues */
+        }
+        input[type=submit] {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Portfolio Optimizer</h1>
+    <form action="/optimize" method="post">
+        <label for="tickers">Tickers (comma-separated):</label>
+        <input type="text" id="tickers" name="tickers" required value="AAPL,MSFT,GOOGL">
+
+        <label for="monto_inversion">Investment Amount:</label>
+        <input type="number" id="monto_inversion" name="monto_inversion" required step="any" value="10000">
+
+        <label for="moneda_usuario">Investment Currency:</label>
+        <input type="text" id="moneda_usuario" name="moneda_usuario" required value="USD">
+
+        <label for="indice">Reference Index:</label>
+        <select id="indice" name="indice">
+            {% for idx in indices %}
+            <option value="{{ idx }}">{{ idx }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="horizonte">Investment Horizon:</label>
+        <select id="horizonte" name="horizonte">
+             {% for h in horizontes %}
+            <option value="{{ h }}">{{ h }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="objetivo">Optimization Objective:</label>
+        <select id="objetivo" name="objetivo">
+             {% for obj in objetivos %}
+            <option value="{{ obj }}">{{ obj }}</option>
+            {% endfor %}
+        </select>
+
+        <input type="submit" value="Optimize Portfolio">
+    </form>
+</body>
+</html>
