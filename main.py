@@ -8,10 +8,10 @@ import matplotlib.pyplot as plt
 import uuid # To generate unique filenames
 
 # Import functions from your existing modules
-from market_data import MarketData #
-from data_processing import extraer_datos, procesar_datos #
-from portfolio_optimizer import PortfolioOptimizer #
-from report_generator import generar_reporte_pdf #
+# from market_data import MarketData # <-- No longer needed for risk-free rate
+from data_processing import extraer_datos, procesar_datos
+from portfolio_optimizer import PortfolioOptimizer
+from report_generator import generar_reporte_pdf
 # Assuming visualization.py has plot_portfolio_growth that saves the plot
 
 app = Flask(__name__)
@@ -49,6 +49,7 @@ def index():
 def optimize():
     """Handles form submission, runs optimization, and shows results."""
     try:
+        # --- Get data from form ---
         tickers_str = request.form['tickers']
         tickers = [ticker.strip().upper() for ticker in tickers_str.split(',')]
         monto_inversion = float(request.form['monto_inversion'])
@@ -56,13 +57,16 @@ def optimize():
         indice = request.form['indice']
         # horizonte = request.form['horizonte'] # Currently unused in main logic
         objetivo = request.form['objetivo']
+        # Get risk-free rate from form and convert to float
+        risk_free_rate = float(request.form['risk_free_rate']) # <-- Read from form
         fecha_inicio = "2014-01-01" # Or calculate based on horizon
 
         print(f"Received tickers: {tickers}") # Debug print
+        print(f"Received risk-free rate: {risk_free_rate}") # Debug print for the input rate
 
         # --- Core Logic adapted from main_v1.py ---
-        market_data = MarketData() #
-        risk_free_rate = market_data.get_risk_free_rate() #
+        # market_data = MarketData() # <-- Removed
+        # risk_free_rate = market_data.get_risk_free_rate() # <-- Removed - Now using form input
 
         data = extraer_datos(tickers, fecha_inicio) #
         if data.empty or data.isnull().all().all():
@@ -86,7 +90,7 @@ def optimize():
         report_filepath = os.path.join(app.config['UPLOAD_FOLDER'], report_filename)
 
 
-        # Generate report
+        # Generate report - Pass the user-provided risk_free_rate
         generar_reporte_pdf(indice, moneda_usuario, monto_inversion, df_weights, risk_free_rate, objetivo, filename=report_filepath) #
 
         # Simulate and plot growth
@@ -97,12 +101,14 @@ def optimize():
         # --- Prepare results for template ---
         weights_dict = df_weights.to_dict(orient='records')
 
+        # Pass the user-provided risk-free rate to the results template
         return render_template('results.html',
                                tickers=tickers_str,
                                monto=monto_inversion,
                                moneda=moneda_usuario,
                                indice=indice,
                                objetivo=objetivo,
+                               risk_free_rate_used=risk_free_rate, # <-- Pass rate to results
                                weights=weights_dict,
                                report_file=report_filename,
                                plot_file=plot_filename)
@@ -119,4 +125,4 @@ def serve_static(filename):
 
 if __name__ == '__main__':
     # Make sure debug=False for production environments
-    app.run(debug=True)
+    app.run(debug=False)

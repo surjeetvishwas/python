@@ -24,6 +24,8 @@
         input[type=submit]:hover {
             background-color: #45a049;
         }
+        /* Style for hint */
+        label span { font-size: 0.8em; color: #555; }
     </style>
 </head>
 <body>
@@ -38,6 +40,8 @@
         <label for="moneda_usuario">Investment Currency:</label>
         <input type="text" id="moneda_usuario" name="moneda_usuario" required value="USD">
 
+        <label for="risk_free_rate">Risk-Free Rate <span>(e.g., 0.04 for 4%)</span>:</label>
+        <input type="number" id="risk_free_rate" name="risk_free_rate" required step="0.0001" value="0.04">
         <label for="indice">Reference Index:</label>
         <select id="indice" name="indice">
             {% for idx in indices %}
