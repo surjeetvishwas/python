@@ -1,0 +1,25 @@
+2025-04-18 05:20:48,589 INFO <module>(41) Portfolio Optimizer Application Starting Up...
+2025-04-18 05:20:51,001 INFO index(73) Rendering index page for request from 127.0.0.1
+2025-04-18 05:20:52,769 INFO optimize(83) Optimize request received from 127.0.0.1
+2025-04-18 05:20:52,771 INFO optimize(96) Tickers received: ['AAPL', 'MSFT', 'GOOGL']
+2025-04-18 05:20:52,771 INFO optimize(134) Input validation passed. Starting optimization for tickers: ['AAPL', 'MSFT', 'GOOGL'], risk rate: 0.04
+2025-04-18 05:21:00,194 INFO optimize(150) Calculated portfolio weights: {'AAPL': np.float64(0.10206017488724553), 'GOOGL': np.float64(0.4877644671183418), 'MSFT': np.float64(0.4101753579944127)}
+2025-04-18 05:21:00,203 INFO optimize(163) Generated PDF report: reporte_b2168962-6723-44e5-951f-0f1006281ef1.pdf
+2025-04-18 05:21:00,706 INFO save_portfolio_growth_plot(63) Plot saved successfully to static\growth_plot_b2168962-6723-44e5-951f-0f1006281ef1.png
+2025-04-18 05:21:00,712 INFO optimize(172) Optimization successful. Rendering results page.
+2025-04-18 05:22:40,657 INFO optimize(83) Optimize request received from 127.0.0.1
+2025-04-18 05:22:40,658 INFO optimize(96) Tickers received: ['AAPL', 'MSFT', 'GOOGL']
+2025-04-18 05:22:40,659 INFO optimize(134) Input validation passed. Starting optimization for tickers: ['AAPL', 'MSFT', 'GOOGL'], risk rate: 0.04
+2025-04-18 05:22:41,430 INFO optimize(150) Calculated portfolio weights: {'AAPL': np.float64(0.6072739974319837), 'GOOGL': np.float64(0.2484567905550689), 'MSFT': np.float64(0.14426921201294735)}
+2025-04-18 05:22:41,437 INFO optimize(163) Generated PDF report: reporte_0e1812d6-8697-4748-a4ad-1c44043012f2.pdf
+2025-04-18 05:22:41,831 INFO save_portfolio_growth_plot(63) Plot saved successfully to static\growth_plot_0e1812d6-8697-4748-a4ad-1c44043012f2.png
+2025-04-18 05:22:41,833 INFO optimize(172) Optimization successful. Rendering results page.
+2025-04-18 05:26:57,563 INFO <module>(41) Portfolio Optimizer Application Starting Up...
+2025-04-18 05:27:00,334 INFO index(73) Rendering index page for request from 127.0.0.1
+2025-04-18 05:27:02,435 INFO optimize(83) Optimize request received from 127.0.0.1
+2025-04-18 05:27:02,436 INFO optimize(96) Tickers received: ['AAPL', 'MSFT', 'GOOGL']
+2025-04-18 05:27:02,436 INFO optimize(134) Input validation passed. Starting optimization for tickers: ['AAPL', 'MSFT', 'GOOGL'], risk rate: 0.04
+2025-04-18 05:27:03,355 INFO optimize(150) Calculated portfolio weights: {'AAPL': np.float64(0.703667877911504), 'GOOGL': np.float64(0.16520923424912623), 'MSFT': np.float64(0.1311228878393697)}
+2025-04-18 05:27:03,358 INFO optimize(163) Generated PDF report: reporte_0803266a-917c-4186-b13c-d3df84f2a70d.pdf
+2025-04-18 05:27:03,486 INFO save_portfolio_growth_plot(63) Plot saved successfully to static\growth_plot_0803266a-917c-4186-b13c-d3df84f2a70d.png
+2025-04-18 05:27:03,488 INFO optimize(172) Optimization successful. Rendering results page.
