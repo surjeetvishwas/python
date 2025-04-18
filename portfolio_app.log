@@ -23,3 +23,30 @@
 2025-04-18 05:27:03,358 INFO optimize(163) Generated PDF report: reporte_0803266a-917c-4186-b13c-d3df84f2a70d.pdf
 2025-04-18 05:27:03,486 INFO save_portfolio_growth_plot(63) Plot saved successfully to static\growth_plot_0803266a-917c-4186-b13c-d3df84f2a70d.png
 2025-04-18 05:27:03,488 INFO optimize(172) Optimization successful. Rendering results page.
+2025-04-18 05:30:05,461 INFO <module>(32) Portfolio Optimizer Application Starting Up...
+2025-04-18 05:30:07,244 INFO index(94) Rendering index page for request from 127.0.0.1
+2025-04-18 05:30:09,353 INFO optimize(103) Optimize request received from 127.0.0.1
+2025-04-18 05:30:09,353 INFO cleanup_static_files(45) Running cleanup for patterns ['reporte_*.pdf', 'growth_plot_*.png'] in folder static
+2025-04-18 05:30:09,354 INFO cleanup_static_files(57) Found 7 file(s) matching pattern reporte_*.pdf: ['static\\reporte_0803266a-917c-4186-b13c-d3df84f2a70d.pdf', 'static\\reporte_0e1812d6-8697-4748-a4ad-1c44043012f2.pdf', 'static\\reporte_52d71f62-c699-4983-9189-bbdd0515e921.pdf', 'static\\reporte_aaefc180-42f3-4fae-a4eb-cffcd2c2e9f1.pdf', 'static\\reporte_b2168962-6723-44e5-951f-0f1006281ef1.pdf', 'static\\reporte_cfd98c7c-9c0e-4078-9f62-ab072e62236f.pdf', 'static\\reporte_f89fd3d7-360c-4a18-b860-e3ad5c433d0f.pdf']
+2025-04-18 05:30:09,355 INFO cleanup_static_files(61) Successfully deleted old file: static\reporte_0803266a-917c-4186-b13c-d3df84f2a70d.pdf
+2025-04-18 05:30:09,355 INFO cleanup_static_files(61) Successfully deleted old file: static\reporte_0e1812d6-8697-4748-a4ad-1c44043012f2.pdf
+2025-04-18 05:30:09,356 INFO cleanup_static_files(61) Successfully deleted old file: static\reporte_52d71f62-c699-4983-9189-bbdd0515e921.pdf
+2025-04-18 05:30:09,357 INFO cleanup_static_files(61) Successfully deleted old file: static\reporte_aaefc180-42f3-4fae-a4eb-cffcd2c2e9f1.pdf
+2025-04-18 05:30:09,357 INFO cleanup_static_files(61) Successfully deleted old file: static\reporte_b2168962-6723-44e5-951f-0f1006281ef1.pdf
+2025-04-18 05:30:09,358 INFO cleanup_static_files(61) Successfully deleted old file: static\reporte_cfd98c7c-9c0e-4078-9f62-ab072e62236f.pdf
+2025-04-18 05:30:09,358 INFO cleanup_static_files(61) Successfully deleted old file: static\reporte_f89fd3d7-360c-4a18-b860-e3ad5c433d0f.pdf
+2025-04-18 05:30:09,359 INFO cleanup_static_files(57) Found 7 file(s) matching pattern growth_plot_*.png: ['static\\growth_plot_0803266a-917c-4186-b13c-d3df84f2a70d.png', 'static\\growth_plot_0e1812d6-8697-4748-a4ad-1c44043012f2.png', 'static\\growth_plot_52d71f62-c699-4983-9189-bbdd0515e921.png', 'static\\growth_plot_aaefc180-42f3-4fae-a4eb-cffcd2c2e9f1.png', 'static\\growth_plot_b2168962-6723-44e5-951f-0f1006281ef1.png', 'static\\growth_plot_cfd98c7c-9c0e-4078-9f62-ab072e62236f.png', 'static\\growth_plot_f89fd3d7-360c-4a18-b860-e3ad5c433d0f.png']
+2025-04-18 05:30:09,361 INFO cleanup_static_files(61) Successfully deleted old file: static\growth_plot_0803266a-917c-4186-b13c-d3df84f2a70d.png
+2025-04-18 05:30:09,362 INFO cleanup_static_files(61) Successfully deleted old file: static\growth_plot_0e1812d6-8697-4748-a4ad-1c44043012f2.png
+2025-04-18 05:30:09,363 INFO cleanup_static_files(61) Successfully deleted old file: static\growth_plot_52d71f62-c699-4983-9189-bbdd0515e921.png
+2025-04-18 05:30:09,364 INFO cleanup_static_files(61) Successfully deleted old file: static\growth_plot_aaefc180-42f3-4fae-a4eb-cffcd2c2e9f1.png
+2025-04-18 05:30:09,365 INFO cleanup_static_files(61) Successfully deleted old file: static\growth_plot_b2168962-6723-44e5-951f-0f1006281ef1.png
+2025-04-18 05:30:09,365 INFO cleanup_static_files(61) Successfully deleted old file: static\growth_plot_cfd98c7c-9c0e-4078-9f62-ab072e62236f.png
+2025-04-18 05:30:09,367 INFO cleanup_static_files(61) Successfully deleted old file: static\growth_plot_f89fd3d7-360c-4a18-b860-e3ad5c433d0f.png
+2025-04-18 05:30:09,368 INFO cleanup_static_files(68) Cleanup finished. Deleted 14 file(s).
+2025-04-18 05:30:09,369 INFO optimize(121) Tickers received: ['AAPL', 'MSFT', 'GOOGL']
+2025-04-18 05:30:09,370 INFO optimize(155) Input validation passed. Starting optimization for tickers: ['AAPL', 'MSFT', 'GOOGL'], risk rate: 0.04
+2025-04-18 05:30:11,336 INFO optimize(169) Calculated portfolio weights: {'AAPL': np.float64(0.028340687361927325), 'GOOGL': np.float64(0.3478523818771942), 'MSFT': np.float64(0.6238069307608785)}
+2025-04-18 05:30:11,338 INFO optimize(182) Generated PDF report: reporte_48629dd7-6e23-4f01-87c1-0daead773961.pdf
+2025-04-18 05:30:11,554 INFO save_portfolio_growth_plot(84) Plot saved successfully to static\growth_plot_48629dd7-6e23-4f01-87c1-0daead773961.png
+2025-04-18 05:30:11,556 INFO optimize(191) Optimization successful. Rendering results page.
